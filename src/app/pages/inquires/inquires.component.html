@@ -1,0 +1,57 @@
+<h2>Inquires</h2>   
+<hr>
+
+
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table"> 
+    <thead>
+      <tr>
+       
+        <th> Date</th>
+        <th> User Name </th>
+        <th>Title</th>
+        <th> Description</th>
+      
+      
+        <th>Action</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let person of persons">
+      
+        <td routerLink="event-details">{{ person.name }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.phone }}</td>
+        <td>{{ person.event }}</td>
+        <td>  <p style="font-size: 1.2rem; "   (click)="openModal(template)"> &#10148;</p></td>
+        
+        
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #template>
+    <div class="modal-header">
+       <h4 class="modal-title pull-left">  Please  enter message</h4>
+       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">×</span>
+       </button>
+    </div>
+    <div class="modal-body">
+    <h3>  </h3>
+     
+<form>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1"> </label>
+        <textarea class="form-control" placeholder="Text here" id="exampleFormControlTextarea1" rows="5"></textarea>
+      </div>
+    </form>
+   
+    </div>
+    <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Send</button>
+    </div>
+ </ng-template>
+ 

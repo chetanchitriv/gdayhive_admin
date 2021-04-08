@@ -1,0 +1,3 @@
+<li *ngFor="let item of menu" class="nav-item has-treeview" (click)="toggleMenu(item.id)">
+    <app-sidebar-item [item]="item" [id]="item.id"></app-sidebar-item>
+</li>

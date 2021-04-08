@@ -1,0 +1,58 @@
+
+
+
+
+   <h3>User Details Screen </h3>
+    
+
+   <div class="container">
+       <div class="row">
+           <div class="col-3" > <img src="https://picsum.photos/200" alt="user"></div>
+           <!-- {{persons | json}}  -->
+
+
+           <div class="col-5"  offset="2">
+           
+              <h6>  User name : {{persons.fullName}}  </h6>
+              <h6> User Name :{{persons.email}} </h6>
+              <h6> User Mobile :{{persons.mobile}} </h6>
+        
+        </div>
+        
+           <div class="col-4 mt-5">
+            <h6>  Subcription Expiry Date : {{persons.subscription_expiry_date}}</h6>
+              <h6 >Plan Register  Date :{{persons.registered_date ? persons.registered_date :'NA'}}</h6>
+              <h6> User Subcription Name :{{ persons.subscription_name ? persons.subscription_name :'NA'}}</h6>
+        </div>
+       </div>
+   </div>
+  
+
+   <hr>
+   <h3>List of Events</h3>
+
+   <table datatable [dtOptions]="dtOptions"   class="row-border hover table">
+    <thead>
+      <tr>
+        <th>Event ID</th>
+        <th>Date & Time </th>
+        <th> Title</th>
+        <th> Users Joined </th>
+        <th> Type</th>
+       
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td routerLink="user-event-details"></td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td></td>
+      
+       
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,77 @@
+
+/* Header start css */
+
+.header_Sec {
+    width: 100%;
+    float: left;
+    /* background: $title-color; */
+    padding: 12px 15px;
+    // position: absolute;
+    position: fixed;
+    left: 0;
+    right: 0;
+    .header-top {
+        width: 100%;
+        float: left;
+        .navbar {
+            padding: 0 !important;
+            a.navbar-brand {
+                img {
+                    max-width: 100%;
+                    width: 167px;
+                }
+            }
+            .navbar-toggler {
+                outline: none !important;
+                .navbar-toggler-icon {
+                    font-size: 0 !important;
+                    border: none !important;
+                    outline: none !important;
+                    opacity: 1 !important;
+                    width: 40px;
+                    height: 40px;
+                    background: none;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .navbar-collapse {
+                ul {
+                    margin-top: 4px;
+                    li {
+                        a {
+                            letter-spacing: 0.32px;
+                            // font-size: $font-size-16;
+                            // font-weight: $Medium;
+                            // color: $white-color;
+                            padding-left: 5rem;
+                        }
+                    }
+                }
+                .form-inline {
+                    letter-spacing: 0.32px;
+                    // font-size: $font-size-16;
+                    // font-weight: $Medium;
+                    // color: $white-color;
+                    border: solid 1px #fff;
+                    border-radius: 27px;
+                    padding: 8px 0;
+                    width: 175px;
+                    text-align: center;
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.user-circle {
+  width: 43px !important;
+  height: 43px !important;
+  border-radius: 50% !important;
+}
+
+
+/* Header End Css */

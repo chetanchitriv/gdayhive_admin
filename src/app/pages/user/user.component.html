@@ -1,0 +1,38 @@
+
+<h1>User Listing  </h1>   
+<table  class="row-border hover">
+    <thead>
+      <tr>
+       
+        <th>Name</th>
+        <th>Email ID</th>
+        <th>Phone NO</th>
+        <th>Event Created</th>
+        <th>Registered Date</th>
+        <th>Subscription Plan</th>
+        <th>Expiry Date</th>
+        <th>Action</th>
+
+
+      </tr>
+    </thead>
+    <tbody >
+      <tr   *ngFor="let person of persons">
+            
+        <td routerLink="user-detail/{{person.user_id}}">{{ person.fullName }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.mobile }}</td>
+        <td>{{ person.total_event ? person.total_event :'NA'}}</td>
+        <td>{{ person.registered_date ? person.registered_date  :'NA' }}</td>
+        <td>{{ person.subscription_name ? person.subscription_name :'NA'}}</td>
+        <td>{{person.subscription_expiry_date?person.subscription_expiry_date:'NA'}}</td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" class="switch-input" (change)="change($event,person.user_id)">
+            <span class="switch-label" ></span>
+            <span class="switch-handle"></span>
+          </label>
+        </td>
+      </tr>
+    </tbody>
+  </table>

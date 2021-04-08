@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <h5 class="modal-title">{{availableList.isSector ? 'Sector' : 'Member'}} List</h5>
+    <button class="btn btn-primary" (click)="onClose()"><i class="fa fa-times"></i></button>
+</div>
+<div class="modal-body">
+    <div class="input-group mb-3 search-input">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+        </div>
+        <input type="text" class="form-control" (keyup)="shared.onSearchKeyUp()" [(ngModel)]="shared.searchVal" [placeholder]="'Search ' + (availableList.isSector ? 'Sector' : 'Member')">
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-fixed table-bordered" matSort (matSortChange)="shared.sortList($event)" [matSortDisableClear]="true" [matSortDisabled]="availableList.itemList.length === 0">
+            <thead class="thead-light">
+                <tr>
+                    <th mat-sort-header="sectorname" *ngIf="availableList.isSector">Sector Name</th>
+                    <th mat-sort-header="fullName" *ngIf="!availableList.isSector">Name</th>
+                    <th mat-sort-header="userName" *ngIf="!availableList.isSector">Username</th>
+                    <th mat-sort-header="createdAt">Date Created</th>
+                    <th mat-sort-header="createdBy">Added By</th>
+                    <th mat-sort-header="lastLoggingDate" *ngIf="!availableList.isSector">Last Login</th>
+                    <th mat-sort-header="sectorname" *ngIf="!availableList.isSector">Sector</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let itemSM of availableList.itemList; let i = index;">
+                    <td *ngIf="availableList.isSector">{{itemSM.sectorname}}</td>
+                    <td *ngIf="!availableList.isSector">{{itemSM.fullName}}</td>
+                    <td *ngIf="!availableList.isSector">{{itemSM.userName}}</td>
+                    <td>{{itemSM.createdAt | date:'yyyy/MM/dd hh:mm aaa'}}</td>
+                    <td>{{itemSM.createdBy}}</td>
+                    <td *ngIf="!availableList.isSector">{{itemSM.lastLoggingDate ? (itemSM.lastLoggingDate | date:'yyyy/MM/dd hh:mm aaa') : '-'}}</td>
+                    <td *ngIf="!availableList.isSector">{{itemSM.sectorNames ? itemSM.sectorNames : '-' }}</td>
+                    <td class="action-td text-center">
+                        <button class="btn rounded-btn btn-primary" (click)="addItem(i)">                           
+                            <i class="fa" [ngClass]="selectedItem.has(itemSM.id) ? 'fa-minus' : 'fa-plus'"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr *ngIf="availableList.itemList.length === 0">
+                    <td [colSpan]="availableList.isSector ? '4' : '7'" class="text-center">No Record Found</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="availableList.itemList.length !== 0 && showPagination">
+        <app-common-pagination></app-common-pagination>
+    </div>
+</div>

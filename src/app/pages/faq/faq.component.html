@@ -1,0 +1,32 @@
+<h1>FAQs</h1>
+   <hr>
+   <button type="button" routerLink="new-faqs" class="btn btn-secondary float-right">Add FAQs</button>
+    <br> <br> <br>
+   <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Question</th>
+        <th scope="col">Answer</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of faqlist">
+        <th scope="row">{{list.id}}</th>
+        <td>{{list.name}}</td>
+        <td>{{list.email}}</td>
+        <td>   <div style="display: flex;"><p style="font-size: 1.2rem;" routerLink="edit-faqs"> &#9998;</p> &nbsp;   <i style="font-size: 1.2rem;" class="fa fa-trash" aria-hidden="true"></i> 
+            <label class="switch">
+                <input type="checkbox" class="switch-input">
+                <span class="switch-label" data-on="" data-off=""></span>
+                <span class="switch-handle"></span>
+              </label>
+        </div>  </td>
+      </tr>
+     
+      
+    </tbody>
+  </table>
+
+  

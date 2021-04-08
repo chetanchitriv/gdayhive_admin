@@ -1,0 +1,40 @@
+<h2>Sub Admin</h2>
+
+<hr>
+<button type="button"  routerLink="new-admin" class="btn btn-secondary float-right"> Add Sub Admin</button>
+<br><br> <br>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table"> 
+   <thead>
+     <tr>
+       <th> ID</th>
+       <th>Name</th>
+       <th> Email</th>
+       <th> Mobile</th>
+      
+     
+       <th>Action</th>
+       
+
+     </tr>
+   </thead>
+   <tbody>
+     <tr  *ngFor="let person of persons">
+       <td >{{ person.id }}</td>
+       <td routerLink="event-details">{{ person.name }}</td>
+       <td>{{ person.email }}</td>
+       <td>{{ person.phone }}</td>
+       <td>  
+
+        <div style="display: flex;"><p style="font-size: 1.2rem;" routerLink="edit-faqs"> &#9998;</p> &nbsp;   <i style="font-size: 1.2rem;" class="fa fa-trash" aria-hidden="true"></i> 
+            <label class="switch">
+                <input type="checkbox" class="switch-input">
+                <span class="switch-label" data-on="" data-off=""></span>
+                <span class="switch-handle"></span>
+              </label>
+        </div> 
+       </td>
+   
+      
+     </tr>
+   </tbody>
+ </table>

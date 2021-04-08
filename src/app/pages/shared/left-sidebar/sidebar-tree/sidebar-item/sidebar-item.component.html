@@ -1,0 +1,10 @@
+<a [routerLink]="item.link" routerLinkActive="active" [ngClass]="{'no-active': item.menu}" class="nav-link">
+    <i [class]="'nav-icon ' + item.icon"></i>&nbsp;
+    <p>
+        {{item.title}}
+        <i class="fas fa-angle-left right" *ngIf="item.menu"></i>
+    </p>
+</a>
+<ul class="nav nav-treeview" *ngIf="item.menu" (click)="$event.stopPropagation();">
+    <app-sidebar-tree [menu]="item.menu"></app-sidebar-tree>
+</ul>

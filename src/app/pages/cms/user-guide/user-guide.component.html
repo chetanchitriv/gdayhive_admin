@@ -1,0 +1,22 @@
+<h1>user-guide </h1>
+
+<hr>   
+
+   <br>
+<form [formGroup]="userGuideForm" (ngSubmit)="userGuid()" *ngIf="userGuideForm" class="creat-event">
+<div class="form-group">
+  <label for="exampleInputPassword1">  </label>
+  <h3>Video URL : </h3>  <input type="text" name="url" formControlName="url" class="form-control" id="exampleInputPassword1" placeholder=" Add Url" >
+  
+  <app-validation-message [control]="userGuideForm.controls['url']" [messages]="messageList.url">
+  </app-validation-message>
+
+</div>
+<br> <br> <br> <br> 
+<button type="button" class="btn btn-secondary">Save</button>  &nbsp;  &nbsp;
+<button type="button" class="btn btn-light">Add More </button>
+  </form>
+  
+
+
+

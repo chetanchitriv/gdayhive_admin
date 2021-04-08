@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-7">
+        <pagination class="pagination-css" [totalItems]="shared.mainPagination.totalPages * shared.mainPagination.perPage" [itemsPerPage]="shared.mainPagination.perPage" [ngModel]="shared.mainPagination.currentPage" (pageChanged)="pageChanged($event)"></pagination>
+    </div>
+    <div class="col-3">
+        <div class="btn-group" role="group">
+            <button type="button" [disabled]="shared.mainPagination.viewAll" class="btn btn-light" [ngClass]="{'active': shared.mainPagination.perPage === 05}" (click)="onPageSet(05)">05</button>
+            <button type="button" [disabled]="shared.mainPagination.viewAll" class="btn btn-light active" [ngClass]="{'active': shared.mainPagination.perPage === 10}" (click)="onPageSet(10)">10</button>
+            <button type="button" [disabled]="shared.mainPagination.viewAll" class="btn btn-light" [ngClass]="{'active': shared.mainPagination.perPage === 15}" (click)="onPageSet(15)">15</button>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="custom-control custom-switch">
+            <input type="checkbox" [(ngModel)]="shared.mainPagination.viewAll" (change)="onViewAll($event)" class="custom-control-input" id="customSwitches">
+            <label class="custom-control-label" for="customSwitches">View All</label>
+        </div>
+    </div>
+</div>

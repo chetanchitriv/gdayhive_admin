@@ -1,0 +1,23 @@
+<h1>New-FAQs-Details</h1>
+  <hr>
+  <form [formGroup]="newFaqsForm" (ngSubmit)="onCreateEvent()" *ngIf="newFaqsForm" >
+    <div class="form-group">
+      <label for="exampleInputEmail1"></label>
+      <input type="email" class="form-control" formControlName="question" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Question">
+      <app-validation-message [control]="newFaqsForm.controls['question']" [messages]="messageList.question">
+      </app-validation-message>
+    </div>
+    
+
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1"> </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="answer" rows="3" placeholder="Answer"></textarea>
+        <app-validation-message [control]="newFaqsForm.controls['answer']" [messages]="messageList.answer">
+        </app-validation-message>
+      </div>
+      <button type="button" class="btn btn-secondary">Add FAQs </button> &nbsp; &nbsp;
+
+<button type="button" class="btn btn-light">Cancel</button>
+</form>
+

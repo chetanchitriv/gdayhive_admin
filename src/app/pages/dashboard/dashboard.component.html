@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-lg-3 col-xs-6">
+        <div class="small-box boxColor" style="border-style: solid;border-color: black;">
+            <div style=" text-align: center;">
+                <i class="fa fa-users icon"></i>
+                <div class="inner">
+                    <h3 class="number">{{ totalUserCount }}</h3>
+                    <p class="text">{{'totalUser' | translate}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-6" (click)="redirect('users/members')">
+        <div class="small-box boxColor" style="border-style: solid;border-color: black;">
+            <div style=" text-align: center;">
+                <i class="fa fa-user icon"></i>
+                <div class="inner">
+                    <h3 class="number">{{ memberCount }}</h3>
+                    <p class="text">Members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-6" (click)="redirect('users/admin')">
+        <div class="small-box boxColor" style="border-style: solid;border-color: black;">
+            <div style=" text-align: center;">
+                <i class="fa fa-graduation-cap icon"></i>
+                <div class="inner">
+                    <h3 class="number">{{ adminCount }}</h3>
+                    <p class="text">Admin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-6" (click)="redirect('content/profile/reps')">
+        <div class="small-box boxColor" style="border-style: solid;border-color: black;">
+            <div style=" text-align: center;">
+                <i class="fa fa-leaf icon"></i>
+                <div class="inner">
+                    <h3 class="number">{{ repsCount }}</h3>
+                    <p class="text">Reps</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-6" (click)="redirect('sectors')">
+        <div class="small-box boxColor" style="border-style: solid;border-color: black;">
+            <div style=" text-align: center;">
+                <i class="fa fa-object-group icon"></i>
+                <div class="inner">
+                    <h3 class="number">{{ sectorCount }}</h3>
+                    <p class="text">Sectors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-6" (click)="redirect('content/training/courses')">
+        <div class="small-box boxColor" style="border-style: solid;border-color: black;">
+            <div style=" text-align: center;">
+                <i class="fa fa-puzzle-piece icon"></i>
+                <div class="inner">
+                    <h3 class="number">{{ courseCount }}</h3>
+                    <p class="text">Courses</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-xs-6" (click)="redirect('content/calendar')">
+        <div class="small-box boxColor" style="border-style: solid;border-color: black;">
+            <div style=" text-align: center;">
+                <i class="fa fa-calendar icon"></i>
+                <div class="inner">
+                    <h3 class="number">{{ eventCount }}</h3>
+                    <p class="text">Upcoming Events</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

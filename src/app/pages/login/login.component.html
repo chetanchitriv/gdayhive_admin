@@ -1,0 +1,31 @@
+<div class="login-pages">
+    <div class="row">
+        <div class="col-md-4  login-logo-section">
+            <div class="loginform-box box effect5">
+                <div class="login-header">
+                    <img src="../../../assets/images/red.png" alt="Please wait..." />
+                </div>
+                <form [formGroup]="loginParam" role="form" (ngSubmit)="onLogin()">
+                    <div class="form-content">
+                        <div class="form-group">
+                            <input type="text" formControlName="email" class="form-control input-underline input-lg" maxlength="50" placeholder="Username">
+                            <app-validation-message [control]="loginParam.controls['userName']"
+                            [messages]="Message.txtEmailValid">
+                        </app-validation-message>
+                                            </div>
+                        <div class="form-group">
+                            <input type="password" formControlName="password" class="form-control input-underline input-lg" maxlength="30" placeholder="Password">
+                            <app-validation-message [control]="loginParam.controls['password']"
+                            [messages]="Message.txtPassword">
+                        </app-validation-message>
+                        </div>
+                        <a class="forgot-password-wrapper" routerLink="forgot-password">Forgot Password ?</a>
+<br>
+                        <button type="submit" class="btn rounded-btn btn-style btn-primary" >Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- (click)="login(loginParam.value, loginParam.valid)" -->
+</div>

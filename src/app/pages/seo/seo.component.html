@@ -1,0 +1,79 @@
+<h5>SEO</h5>
+ 
+
+
+
+
+
+<hr>  <br> <br>
+
+   
+
+
+
+
+
+<div class="container">
+	<form #todoForm= "ngForm"(submit)="todoSubmit(todoForm.value); todoForm.resetForm()" >
+		<div class="form-group">
+		
+			<div class="input-group-prepend">
+            Keywords Tag :    <input type="text" #todo  class=" " placeholder="Add Tag" name="todo" ngModel>
+				<span class="input-group-text" (click)="addTodo(todo.value)">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+			</div>
+		</div>
+		<div class="data">
+		<ul class="list-unstyled">
+			<li   *ngFor="let todo of todoArray">{{todo}}  <i (click)="deleteItem(todo)" class="fa fa-window-close" aria-hidden="true"></i> </li> 
+		</ul>
+	</div>    
+
+  <hr>
+
+  <div class="form-group">
+		
+   <div class="input-group-prepend">
+      Title Tag :	    <input type="text" #todo1 class=" " placeholder="Add Tag" name="todo1" ngModel>
+      <span class="input-group-text" (click)="addTodo1(todo1.value)">
+         <i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+   </div>
+</div>
+<div class="data">
+<ul class="list-unstyled">
+   <li   *ngFor="let todo of todoArray1">{{todo}}  <i (click)="deleteItem1(todo)" class="fa fa-window-close" aria-hidden="true"></i> </li> 
+</ul>
+</div>
+
+<hr>
+
+<div class="form-group">
+		
+   <div class="input-group-prepend">
+   Meta Tag:    <input type="text" #todo2  class=" " placeholder="Add Tag" name="todo2" ngModel>
+      <span class="input-group-text" (click)="addTodo2(todo2.value)">
+         <i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+   </div>
+</div>
+<div class="data">
+<ul class="list-unstyled">
+   <li   *ngFor="let todo of todoArray2">{{todo}}  <i (click)="deleteItem2(todo)" class="fa fa-window-close" aria-hidden="true"></i> </li> 
+</ul>
+</div>
+
+<button type="button" class="btn btn-secondary">Save</button> 
+	</form>
+</div>
+
+   
+
+
+	
+	
+
+   
+
+
+
+
+

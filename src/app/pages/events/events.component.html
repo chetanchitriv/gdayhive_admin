@@ -1,0 +1,40 @@
+<h1>Event Listing</h1>
+
+ <hr>
+ <button type="button"  routerLink="create-event" class="btn btn-secondary float-right"> Creat Event</button>
+ <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table"> 
+    <thead>
+      <tr>
+        <th>Event ID</th>
+        <th>Host</th>
+        <th>Date & Time </th>
+        <th>Title</th>
+        <th> User Joined</th>
+        <th> Type</th>
+      
+        <th>Action</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let person of persons">
+        <td >{{ person.id }}</td>
+        <td routerLink="event-details">{{ person.name }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.phone }}</td>
+        <td>{{ person.event }}</td>
+        <td>public</td>
+        
+        <td>
+          <label class="switch">
+            <input type="checkbox" class="switch-input">
+            <span class="switch-label" data-on="" data-off=""></span>
+            <span class="switch-handle"></span>
+          </label>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  

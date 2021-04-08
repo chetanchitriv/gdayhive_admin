@@ -1,0 +1,10 @@
+node_modules
+package-lock.json
+dist
+**/.DS_Store
+.vscode
+browserslist
+karma.conf.js
+tsconfig.spec.json
+e2e
+awsCredentials.json
